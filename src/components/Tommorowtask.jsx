@@ -1,10 +1,11 @@
-function Tommorowtask () {
+
+function Tommorowtask ({ Counter }) {
     return (
         <div className="tommorow">
             <h1>Tommorow task</h1>
-            <button id="Btmove">Move</button>
+            <button id="Btmove" onClick={Counter} >Move</button>
         </div>
-       
+        
     )
 
     
