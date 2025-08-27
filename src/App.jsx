@@ -1,26 +1,27 @@
-import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import Tommorowtask from './components/Tommorowtask'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import Contact from './pages/Contact'
+import About from './pages/About'
+import Post from './pages/Post.jsx'
+import Nav from './components/Nav.jsx'
 
 function App() {
-  // const [count, setCount] = useState(0)
-  const [count, setCount] = useState(0)
- 
-
-  useEffect(()=>{
-    document.title="Tbet"
-    
-  }, [])
 
   return (
-    <div>
-      <h1 className="head">welocome to tbet</h1>
-      <button onClick={() => setCount(count + 1)}>
-        Clicked {count} times
-      </button>
-    </div>
+
+    <Router className="Router">
+      <Nav></Nav>
+      <div>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/abcd' element={<Post />}/>
+        </Routes>
+      </div>
+    </Router>
+    
   )
 }
 
